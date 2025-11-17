@@ -1,0 +1,13 @@
+/* CSS (polished) */
+:root{ --bg: #f4f7fb; --panel-bg: #ffffff; --muted: #b0bec5; --accent: #52ab98; --accent-600: #40917f; --primary-700: #2b6777; --info: #3b9ae1; --danger: #b71c1c; --card-border: #d0d7de; --shadow: 0 4px 20px rgba(0,0,0,0.06); --text: #333; --code-bg: #e0f7fa; --success: #2e7d32; --warning: #ffb300; --surface: #fafafa; --glass: rgba(255,255,255,0.7); }
+body.dark-mode{ --bg: #121212; --panel-bg: #1e1e1e; --muted: #555; --accent: #3b9ae1; --accent-600: #2b6fb4; --primary-700: #9bd6e0; --info: #3b9ae1; --danger: #ff6b6b; --card-border: #333; --shadow: none; --text: #ecf0f1; --code-bg: #243447; --success: #27ae60; --warning: #f39c12; --surface: #18222d; --glass: rgba(255,255,255,0.03); }
+* { box-sizing: border-box; }
+body { font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif; margin: 0; padding: 1rem; background-color: var(--bg); color: var(--text); transition: background-color .25s ease, color .25s ease; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.container{ max-width: 1000px; margin: auto; padding: 1.25rem; background: var(--panel-bg); box-shadow: var(--shadow); border-radius: 10px; border: 1px solid var(--card-border); }
+h1, h3 { color: var(--primary-700); margin: .25rem 0 0.75rem; text-align: center; }
+.controls { display:flex; flex-wrap:wrap; gap: .75rem; margin-bottom: 1rem; align-items:center; border:1px solid rgba(0,0,0,0.04); background: var(--surface); padding: .85rem; border-radius: 8px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(56px, 1fr)); gap: 8px; margin-bottom: 1rem; }
+.grid .grid-cell { min-height: 48px; display:flex; align-items:center; justify-content:center; padding: 8px; text-align:center; background: var(--code-bg); border: 2px solid rgba(0,0,0,0.06); border-radius: 6px; font-weight:700; color: inherit; transition: transform .08s ease, background .12s ease; }
+.grid .fault { background: linear-gradient(180deg,#ffebee,#fff0f0); border-color:#e57373; color: var(--danger); }
+#history-log { background-color: #fffbe6; border: 1px solid #ffe082; padding: 1rem; max-height: 220px; overflow-y: auto; border-radius: 6px; margin-top: 1rem; border-top: 2px solid var(--warning); }
+@media (max-width: 700px) { .controls { gap:.5rem; padding:.6rem; } .controls input[type="number"], .controls select { width: 90px; } .grid { grid-template-columns: repeat(auto-fit, minmax(48px, 1fr)); gap:6px; } .container { padding: .75rem; } }
